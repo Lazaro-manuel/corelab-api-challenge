@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    entrypoint: ./start.sh
+    container_name: corelab-api-app
+    restart: always
+    command: "npm start"
+    working_dir: /app
+    ports:
+      - 3002:3002
+      - 9229:9229
+    volumes:
+      - ./:/app
+    network_mode: host
+    depends_on: 
+      - db
+
+  db:
+    image: postgres
+    container_name: corelab-api-db
+    restart: always
+    ports:
+      - 5432:5432
+    tty: true
+    environment:
+      - POSTGRES_USER=Docker
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=veiculos
+
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+    
+volumes:
+  pgdata:
+
+
+
+
