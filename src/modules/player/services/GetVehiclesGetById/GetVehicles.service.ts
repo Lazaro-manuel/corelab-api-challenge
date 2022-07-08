@@ -10,7 +10,7 @@ export class GetVehiclesService {
     const vehicles = await this.vehiclesRepository.getById(id);
 
     if (!vehicles) {
-      throw new NotFoundException('Jogador não encontrado.');
+      throw new NotFoundException('Veiculo não encontrado.');
     }
     return vehicles;
   }

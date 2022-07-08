@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { FindAllVehiclesService } from '../../services/findAllVehicles/FindAllPlayer.service';
 
 @Controller('/vehicles')
-export class FindAllVehicles {
+export class FindAllVehiclesController {
   constructor(private readonly vehiclesService: FindAllVehiclesService) {}
 
   @Get('/')

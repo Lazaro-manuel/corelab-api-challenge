@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity('vehicles')
@@ -27,7 +27,7 @@ export class Vehicles {
   @Column()
   price: number;
 
-  @Column()
+  @CreateDateColumn()
   createdAt: Date;
 
   constructor() {

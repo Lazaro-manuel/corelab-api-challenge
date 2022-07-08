@@ -7,7 +7,7 @@ export class CreateVehiclesService {
   constructor(private playerRepository: VehiclesRepository) {}
 
   async execute(data: CreateVehiclesDTO) {
-    // const playerExit = await this.playerRepository.findByEmail(data.email);
+    // const playerExit = await this.playerRepository.findByPlate(data.plate);
     // if (playerExit) {
     //   throw new BadRequestException('Jogador ja existe');
     // }

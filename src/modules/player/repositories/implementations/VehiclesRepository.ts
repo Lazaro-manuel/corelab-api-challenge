@@ -36,4 +36,13 @@ export class VehiclesRepository implements IVehiclesRepository {
 
     return await this.ormRepository.save(vehicles);
   }
+
+  public async findByPlate(plate: Vehicles): Promise<Vehicles> {
+    const plates = await this.ormRepository.findOne({ where: plate });
+    return plates;
+  }
+
+  public async delete(id: Vehicles): Promise<void> {
+    await this.ormRepository.delete(id);
+  }
 }

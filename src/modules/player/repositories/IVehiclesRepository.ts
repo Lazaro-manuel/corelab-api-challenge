@@ -6,4 +6,6 @@ export interface IVehiclesRepository {
   findAllVehicles(): Promise<Vehicles[]>;
   getById(id: string): Promise<Vehicles>;
   update(id: string, data: CreateVehiclesDTO): Promise<Vehicles>;
+  findByPlate(plate: Vehicles): Promise<Vehicles>;
+  delete(id: Vehicles): Promise<void>;
 }
