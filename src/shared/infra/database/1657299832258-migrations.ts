@@ -28,6 +28,7 @@ export class migrations1657299832258 implements MigrationInterface {
             name: 'isFavorite',
             type: 'boolean',
             default: false,
+            isNullable: true,
           },
           {
             name: 'year',

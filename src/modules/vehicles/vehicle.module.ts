@@ -8,18 +8,21 @@ import { FindAllVehiclesController } from './controller/FindAllVehicles/FIndAllp
 import { FindAllVehiclesService } from './services/findAllVehicles/FindAllPlayer.service';
 import { GetVehiclesController } from './controller/GetVehiclesByID/GetVehiclesController';
 import { GetVehiclesService } from './services/GetVehiclesGetById/GetVehicles.service';
-import { UpdatePlayersController } from './controller/UpdateVehicles/UpdatePlayer.controller';
+import { UpdateVehiclesControllers } from './controller/UpdateVehicles/UpdatePlayer.controller';
 import { UpdateVehiclesService } from './services/UpdateVehicles/UpdateVehicles.service';
 import { DeleteVehiclesController } from './controller/DeleteVehicles/DeleteVehiclesController';
 import { DeleteVehiclesService } from './services/DeleteVehicles/DeleteVehicles.service';
+import { AddFavoriteVehiclesController } from './controller/addFavoriteVehicles/AddFavoriteVehiclesController';
+import { AddFavoriteVehiclesService } from './services/addFavoriteVehicles/addFavoriteVehicles.service';
 
 @Module({
   controllers: [
     CreateVehiclesControllers,
     FindAllVehiclesController,
     GetVehiclesController,
-    UpdatePlayersController,
+    UpdateVehiclesControllers,
     DeleteVehiclesController,
+    AddFavoriteVehiclesController,
   ],
   providers: [
     CreateVehiclesService,
@@ -27,6 +30,7 @@ import { DeleteVehiclesService } from './services/DeleteVehicles/DeleteVehicles.
     GetVehiclesService,
     UpdateVehiclesService,
     DeleteVehiclesService,
+    AddFavoriteVehiclesService,
     VehiclesRepository,
   ],
   imports: [TypeOrmModule.forFeature([Vehicles])],

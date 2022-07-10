@@ -15,8 +15,8 @@ export class Vehicles {
   @Column()
   plate: string;
 
-  @Column()
-  isFavorite: boolean;
+  @Column({ nullable: true, default: false })
+  isFavorite?: boolean;
 
   @Column()
   year: Date;

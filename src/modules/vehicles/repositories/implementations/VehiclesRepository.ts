@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { AddFavoriteDTO } from '../../dtos/AddFavoriteDTO';
 import { CreateVehiclesDTO } from '../../dtos/create-vehicles.dto';
+import { UpdateVehiclesDTO } from '../../dtos/updateVehicles.dto';
 import { Vehicles } from '../../entities/vehicles.entity';
 import { IVehiclesRepository } from '../IVehiclesRepository';
 
@@ -28,7 +30,7 @@ export class VehiclesRepository implements IVehiclesRepository {
     return await this.ormRepository.findOneBy({ id });
   }
 
-  public async update(id: string, data: CreateVehiclesDTO): Promise<Vehicles> {
+  public async update(id: string, data: UpdateVehiclesDTO): Promise<Vehicles> {
     const vehicles = await this.ormRepository.preload({
       id,
       ...data,
@@ -37,12 +39,25 @@ export class VehiclesRepository implements IVehiclesRepository {
     return await this.ormRepository.save(vehicles);
   }
 
-  public async findByPlate(plate: Vehicles): Promise<Vehicles> {
-    const plates = await this.ormRepository.findOne({ where: plate });
-    return plates;
+  public async findByPlate(plate: string): Promise<Vehicles> {
+    return await this.ormRepository.findOneBy({ plate });
   }
 
   public async delete(id: Vehicles): Promise<void> {
     await this.ormRepository.delete(id);
+  }
+
+  public async findByColor(color: string): Promise<Vehicles> {
+    const colors = await this.ormRepository.findOneBy({ color });
+    return colors;
+  }
+
+  public async updateOne(id: string, data: AddFavoriteDTO): Promise<Vehicles> {
+    const vehicles = await this.ormRepository.preload({
+      id,
+      ...data,
+    });
+
+    return await this.ormRepository.save(vehicles);
   }
 }

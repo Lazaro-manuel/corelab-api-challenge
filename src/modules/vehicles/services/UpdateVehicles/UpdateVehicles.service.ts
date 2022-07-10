@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateVehiclesDTO } from '../../dtos/create-vehicles.dto';
+import { UpdateVehiclesDTO } from '../../dtos/updateVehicles.dto';
 import { Vehicles } from '../../entities/vehicles.entity';
 import { VehiclesRepository } from '../../repositories/implementations/VehiclesRepository';
 
@@ -7,11 +8,11 @@ import { VehiclesRepository } from '../../repositories/implementations/VehiclesR
 export class UpdateVehiclesService {
   constructor(private vehiclesRepository: VehiclesRepository) {}
 
-  async execute(id: string, data: CreateVehiclesDTO): Promise<Vehicles> {
+  async execute(id: string, data: UpdateVehiclesDTO): Promise<Vehicles> {
     const vehicles = await this.vehiclesRepository.update(id, data);
 
     if (!vehicles) {
-      throw new NotFoundException(`Veiculos não encontro!`);
+      throw new NotFoundException(`Ups, desculpe! Veiculos não encontro!`);
     }
 
     return vehicles;
