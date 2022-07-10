@@ -32,11 +32,18 @@
 $ npm install
 ```
 
-## Running the app
+## Running the app with docker
+  ```bash
+# development
+$ docker-compose up
+```
+
+
+## Running the app 
 
 ```bash
 # development
-$ npm run start
+$ npm run start 
 
 # watch mode
 $ npm run start:dev
@@ -57,6 +64,28 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Running the migrations
+  ```bash
+# development
+$ yarn migration:run
+
+```
+
+## Create migration
+  ```bash
+# development
+$ yarn migration:create --name=name_migration
+
+```
+
+## Revert Migration
+  ```bash
+# development
+$ yarn migration:revert
+
+```
+
 
 ## Support
 
