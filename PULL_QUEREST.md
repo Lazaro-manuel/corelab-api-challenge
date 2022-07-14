@@ -42,9 +42,9 @@
 
 ## Vamos manter contacto?
 
- - [Lázaro Manuel](https://www.linkedin.com/in/lazaro-manuel/)
- - [Podcast](https://anchor.fm/lazaro-manuel)
- - [Youtube](https://www.youtube.com/channel/UCqPww5N9YJXCsuAuYv7fxyw)
+ Linkedin - [Lázaro Manuel](https://www.linkedin.com/in/lazaro-manuel/)
+ Podcast - [Podcast](https://anchor.fm/lazaro-manuel)
+ Youtube - [Youtube](https://www.youtube.com/channel/UCqPww5N9YJXCsuAuYv7fxyw)
 
 
 
